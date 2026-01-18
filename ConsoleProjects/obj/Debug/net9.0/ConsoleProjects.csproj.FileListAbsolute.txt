@@ -1,0 +1,14 @@
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/bin/Debug/net9.0/ConsoleProjects
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/bin/Debug/net9.0/ConsoleProjects.deps.json
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/bin/Debug/net9.0/ConsoleProjects.runtimeconfig.json
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/bin/Debug/net9.0/ConsoleProjects.dll
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/bin/Debug/net9.0/ConsoleProjects.pdb
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/ConsoleProjects.GeneratedMSBuildEditorConfig.editorconfig
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/ConsoleProjects.AssemblyInfoInputs.cache
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/ConsoleProjects.AssemblyInfo.cs
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/ConsoleProjects.csproj.CoreCompileInputs.cache
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/ConsoleProjects.dll
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/refint/ConsoleProjects.dll
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/ConsoleProjects.pdb
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/ConsoleProjects.genruntimeconfig.cache
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjects/obj/Debug/net9.0/ref/ConsoleProjects.dll

@@ -1,0 +1,36 @@
+{
+  "version": 2,
+  "dgSpecHash": "o09mSh1l30s=",
+  "success": false,
+  "projectFilePath": "/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjectUnitTest/ConsoleProjectUnitTest.csproj",
+  "expectedPackageFiles": [
+    "/Users/prijasanjel/.nuget/packages/coverlet.collector/6.0.0/coverlet.collector.6.0.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/microsoft.codecoverage/17.8.0/microsoft.codecoverage.17.8.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/microsoft.net.test.sdk/17.8.0/microsoft.net.test.sdk.17.8.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/microsoft.netcore.platforms/1.1.0/microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/microsoft.testplatform.objectmodel/17.8.0/microsoft.testplatform.objectmodel.17.8.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/microsoft.testplatform.testhost/17.8.0/microsoft.testplatform.testhost.17.8.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/netstandard.library/2.0.0/netstandard.library.2.0.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/nuget.frameworks/6.5.0/nuget.frameworks.6.5.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/nunit/3.14.0/nunit.3.14.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/nunit.analyzers/3.9.0/nunit.analyzers.3.9.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/nunit3testadapter/4.5.0/nunit3testadapter.4.5.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/system.reflection.metadata/1.6.0/system.reflection.metadata.1.6.0.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/microsoft.netcore.app.ref/8.0.23/microsoft.netcore.app.ref.8.0.23.nupkg.sha512",
+    "/Users/prijasanjel/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.23/microsoft.aspnetcore.app.ref.8.0.23.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project ConsoleProjects is not compatible with net8.0 (.NETCoreApp,Version=v8.0). Project ConsoleProjects supports: net9.0 (.NETCoreApp,Version=v9.0)",
+      "projectPath": "/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjectUnitTest/ConsoleProjectUnitTest.csproj",
+      "filePath": "/Users/prijasanjel/Desktop/ConsoleProjects-Repo/ConsoleProjectUnitTest/ConsoleProjectUnitTest.csproj",
+      "libraryId": "ConsoleProjects",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
+}
