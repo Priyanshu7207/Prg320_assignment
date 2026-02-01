@@ -1,0 +1,15 @@
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/bin/Debug/net10.0/Week4Library
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/bin/Debug/net10.0/Week4Library.deps.json
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/bin/Debug/net10.0/Week4Library.runtimeconfig.json
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/bin/Debug/net10.0/Week4Library.dll
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/bin/Debug/net10.0/Week4Library.pdb
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/Week4Library.GeneratedMSBuildEditorConfig.editorconfig
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/Week4Library.AssemblyInfoInputs.cache
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/Week4Library.AssemblyInfo.cs
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/Week4Library.csproj.CoreCompileInputs.cache
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/Week4Library.sourcelink.json
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/Week4Library.dll
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/refint/Week4Library.dll
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/Week4Library.pdb
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/Week4Library.genruntimeconfig.cache
+/Users/prijasanjel/Desktop/ConsoleProjects-Repo/Week-4/Week4Library/obj/Debug/net10.0/ref/Week4Library.dll
