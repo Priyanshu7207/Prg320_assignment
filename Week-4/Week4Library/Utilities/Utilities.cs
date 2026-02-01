@@ -1,34 +1,41 @@
 using System; 
-// This allows us to use built-in C# features like Console, colors, and input/output.
+// This line allows us to use basic C# features.
+// Examples: Console input/output, colors, and built-in data types.
 
 namespace Week4Library.Utilities
 {
-    // This static class stores helper methods.
-    // These methods are used in many parts of the program to avoid repeating code.
+    // A namespace is used to organize code.
+    // It helps keep utility/helper code separate from the main program.
+
+    // This is a static utility class.
+    // Static means we do NOT need to create an object to use these methods.
+    // These methods help the program run smoothly and look better.
     public static class Utilities
     {
-        // This method prints the main menu on the screen.
-        // It uses colors to make the menu look nice and easy to read.
+        // This method displays the main menu of the Library Management System.
+        // It clears the screen first and then prints menu options using colors.
         public static void PrintMenu()
         {
-            // Clears the console screen before showing the menu.
+            // Clears everything currently shown on the console screen.
+            // This makes the menu look clean every time it appears.
             Console.Clear();
 
-            // Changes the text color to dark blue.
+            // Sets the text color to dark blue for the title.
             Console.ForegroundColor = ConsoleColor.DarkBlue;
 
-            // Prints the title of the program.
+            // Prints decorative lines and the system title.
             Console.WriteLine("==================================");
             Console.WriteLine("      Library Management System   ");
             Console.WriteLine("==================================");
 
-            // Resets the text color back to normal.
+            // Resets the color back to default so other text is not blue.
             Console.ResetColor();
 
             // Changes the text color to dark yellow for menu options.
+            // This makes the options easy to see.
             Console.ForegroundColor = ConsoleColor.DarkYellow;
 
-            // Displays all menu choices for the user.
+            // Displays all choices the user can select from.
             Console.WriteLine("1. Add Book");
             Console.WriteLine("2. Add Magazine");
             Console.WriteLine("3. Add Newspaper");
@@ -40,73 +47,76 @@ namespace Week4Library.Utilities
             Console.WriteLine("9. Sort by Year");
             Console.WriteLine("10. Exit");
 
-            // Resets the text color back to default.
+            // Resets the text color so future output is normal.
             Console.ResetColor();
 
-            // Prints an empty line for spacing.
+            // Adds a blank line to separate menu from user input.
             Console.WriteLine();
         }
 
-        // This method prints a message in a specific color.
-        // It is useful for showing errors, warnings, or important messages.
+        // This method writes text in a specific color.
+        // It is mainly used for prompts, warnings, and error messages.
         public static void ColorWrite(string message, ConsoleColor color)
         {
-            // Sets the text color to the chosen color.
+            // Changes the console text color to the provided color.
             Console.ForegroundColor = color;
 
-            // Writes the message without moving to a new line.
+            // Writes the message without moving to the next line.
             Console.Write(message);
 
-            // Resets the color so future text is normal.
+            // Resets the color so it does not affect other text.
             Console.ResetColor();
         }
 
-        // This method pauses the program so the user can read the output.
-        // The program waits until the user presses ENTER.
+        // This method pauses the program.
+        // It allows the user time to read messages before continuing.
         public static void Pause()
         {
-            // Sets the text color to yellow to grab attention.
+            // Changes text color to yellow to grab attention.
             Console.ForegroundColor = ConsoleColor.Yellow;
 
-            // Tells the user how to continue.
+            // Displays a message asking the user to press ENTER.
             Console.WriteLine("\nPress ENTER to continue...");
 
-            // Resets the color back to default.
+            // Resets text color to default.
             Console.ResetColor();
 
-            // Waits for the user to press ENTER.
+            // Waits until the user presses ENTER.
             Console.ReadLine();
         }
 
-        // This method safely reads an integer from the user.
-        // It keeps asking until the user enters a valid number.
+        // This method safely reads an integer value from the user.
+        // It prevents crashes caused by invalid input.
         public static int ReadInt(string prompt, bool mustBePositive)
         {
-            // This loop runs forever until a valid number is returned.
+            // Infinite loop that keeps running until valid input is received.
             while (true)
             {
                 // Displays the prompt message in white color.
                 ColorWrite(prompt, ConsoleColor.White);
 
-                // Reads input from the user.
+                // Reads user input from the keyboard.
                 string? input = Console.ReadLine();
 
-                // Tries to convert the input into an integer.
+                // Tries to convert the input string into an integer.
+                // If conversion fails, TryParse returns false.
                 if (int.TryParse(input, out int value))
                 {
                     // Checks if the number must be positive.
                     if (mustBePositive && value <= 0)
                     {
-                        // Shows an error message if the number is not positive.
+                        // Displays an error message in red if number is not positive.
                         ColorWrite("Please enter a positive number.\n", ConsoleColor.Red);
-                        continue; // Goes back to the start of the loop.
+
+                        // Goes back to the start of the loop.
+                        continue;
                     }
 
-                    // Returns the valid number.
+                    // If input is valid, return the number.
                     return value;
                 }
 
-                // Shows an error message if input is not a number.
+                // If input is not a number, show an error message.
                 ColorWrite("Please enter a valid number.\n", ConsoleColor.Red);
             }
         }

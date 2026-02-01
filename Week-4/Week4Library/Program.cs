@@ -1,124 +1,173 @@
-﻿using System; 
-// This line allows us to use basic C# features.
-// Examples: Console input/output, colors, and built-in data types.
+﻿using System;
+using Week4Library.Model;
+using Week4Library.Service;
+using Week4Library.CustomExpectation;
+using Week4Library.Utilities;
 
-namespace Week4Library.Utilities
+namespace Week4Library
 {
-    // A namespace is used to organize code.
-    // It helps keep utility/helper code separate from the main program.
-
-    // This is a static utility class.
-    // Static means we do NOT need to create an object to use these methods.
-    // These methods help the program run smoothly and look better.
-    public static class Utilities
+    class Program
     {
-        // This method displays the main menu of the Library Management System.
-        // It clears the screen first and then prints menu options using colors.
-        public static void PrintMenu()
+        static void Main()
         {
-            // Clears everything currently shown on the console screen.
-            // This makes the menu look clean every time it appears.
-            Console.Clear();
+            // This object controls all library actions like add, remove, search, and sort
+            LibraryService service = new LibraryService();
 
-            // Sets the text color to dark blue for the title.
-            Console.ForegroundColor = ConsoleColor.DarkBlue;
+            // This variable checks if the user wants to exit the program
+            bool exit = false;
 
-            // Prints decorative lines and the system title.
-            Console.WriteLine("==================================");
-            Console.WriteLine("      Library Management System   ");
-            Console.WriteLine("==================================");
-
-            // Resets the color back to default so other text is not blue.
-            Console.ResetColor();
-
-            // Changes the text color to dark yellow for menu options.
-            // This makes the options easy to see.
-            Console.ForegroundColor = ConsoleColor.DarkYellow;
-
-            // Displays all choices the user can select from.
-            Console.WriteLine("1. Add Book");
-            Console.WriteLine("2. Add Magazine");
-            Console.WriteLine("3. Add Newspaper");
-            Console.WriteLine("4. Display All Items");
-            Console.WriteLine("5. Remove Item");
-            Console.WriteLine("6. Search by Title");
-            Console.WriteLine("7. Search by Author");
-            Console.WriteLine("8. Sort by Title");
-            Console.WriteLine("9. Sort by Year");
-            Console.WriteLine("10. Exit");
-
-            // Resets the text color so future output is normal.
-            Console.ResetColor();
-
-            // Adds a blank line to separate menu from user input.
-            Console.WriteLine();
-        }
-
-        // This method writes text in a specific color.
-        // It is mainly used for prompts, warnings, and error messages.
-        public static void ColorWrite(string message, ConsoleColor color)
-        {
-            // Changes the console text color to the provided color.
-            Console.ForegroundColor = color;
-
-            // Writes the message without moving to the next line.
-            Console.Write(message);
-
-            // Resets the color so it does not affect other text.
-            Console.ResetColor();
-        }
-
-        // This method pauses the program.
-        // It allows the user time to read messages before continuing.
-        public static void Pause()
-        {
-            // Changes text color to yellow to grab attention.
-            Console.ForegroundColor = ConsoleColor.Yellow;
-
-            // Displays a message asking the user to press ENTER.
-            Console.WriteLine("\nPress ENTER to continue...");
-
-            // Resets text color to default.
-            Console.ResetColor();
-
-            // Waits until the user presses ENTER.
-            Console.ReadLine();
-        }
-
-        // This method safely reads an integer value from the user.
-        // It prevents crashes caused by invalid input.
-        public static int ReadInt(string prompt, bool mustBePositive)
-        {
-            // Infinite loop that keeps running until valid input is received.
-            while (true)
+            // This loop keeps the program running until the user chooses to exit
+            while (!exit)
             {
-                // Displays the prompt message in white color.
-                ColorWrite(prompt, ConsoleColor.White);
+                // Show the menu options on the screen
+                Utilities.Utilities.PrintMenu();
 
-                // Reads user input from the keyboard.
-                string? input = Console.ReadLine();
+                // Ask the user to choose a menu option
+                Utilities.Utilities.ColorWrite("Choose an option: ", ConsoleColor.White);
+                string? choice = Console.ReadLine();
 
-                // Tries to convert the input string into an integer.
-                // If conversion fails, TryParse returns false.
-                if (int.TryParse(input, out int value))
+                try
                 {
-                    // Checks if the number must be positive.
-                    if (mustBePositive && value <= 0)
+                    // Check the user's choice and perform the correct action
+                    switch (choice)
                     {
-                        // Displays an error message in red if number is not positive.
-                        ColorWrite("Please enter a positive number.\n", ConsoleColor.Red);
+                        case "1":
+                            // Add a new book to the library
+                            service.AddItem(CreateBook());
+                            Utilities.Utilities.ColorWrite("Book added successfully.", ConsoleColor.Green);
+                            break;
 
-                        // Goes back to the start of the loop.
-                        continue;
+                        case "2":
+                            // Add a new magazine to the library
+                            service.AddItem(CreateMagazine());
+                            Utilities.Utilities.ColorWrite("Magazine added successfully.", ConsoleColor.Green);
+                            break;
+
+                        case "3":
+                            // Add a new newspaper to the library
+                            service.AddItem(CreateNewspaper());
+                            Utilities.Utilities.ColorWrite("Newspaper added successfully.", ConsoleColor.Green);
+                            break;
+
+                        case "4":
+                            // Display all library items
+                            service.DisplayAllItems();
+                            break;
+
+                        case "5":
+                            // Remove an item by its title
+                            Utilities.Utilities.ColorWrite("Enter title to remove: ", ConsoleColor.White);
+                            service.RemoveItem(Console.ReadLine() ?? "");
+                            break;
+
+                        case "6":
+                            // Search for an item using its title
+                            Utilities.Utilities.ColorWrite("Enter title to search: ", ConsoleColor.White);
+                            service.SearchByTitle(Console.ReadLine() ?? "");
+                            break;
+
+                        case "7":
+                            // Search for books by author name
+                            Utilities.Utilities.ColorWrite("Enter author to search (Books only): ", ConsoleColor.White);
+                            service.SearchByAuthor(Console.ReadLine() ?? "");
+                            break;
+
+                        case "8":
+                            // Sort all items by title
+                            service.SortByTitle();
+                            break;
+
+                        case "9":
+                            // Sort all items by publication year
+                            service.SortByYear();
+                            break;
+
+                        case "10":
+                            // Exit the program
+                            exit = true;
+                            Utilities.Utilities.ColorWrite("Goodbye! Program closed.", ConsoleColor.Green);
+                            break;
+
+                        default:
+                            // Show error message if option is not valid
+                            Utilities.Utilities.ColorWrite("Invalid option. Try again.", ConsoleColor.Red);
+                            break;
                     }
-
-                    // If input is valid, return the number.
-                    return value;
+                }
+                catch (InvalidItemException ex)
+                {
+                    // Runs when the user enters incorrect or invalid input
+                    Utilities.Utilities.ColorWrite("Input Error: " + ex.Message, ConsoleColor.Red);
+                }
+                catch (DuplicateItemException ex)
+                {
+                    // Runs when the user tries to add a duplicate item
+                    Utilities.Utilities.ColorWrite("Duplicate Error: " + ex.Message, ConsoleColor.Red);
+                }
+                catch (Exception ex)
+                {
+                    // Runs when an unexpected error happens
+                    Utilities.Utilities.ColorWrite("Unexpected Error: " + ex.Message, ConsoleColor.Red);
                 }
 
-                // If input is not a number, show an error message.
-                ColorWrite("Please enter a valid number.\n", ConsoleColor.Red);
+                // Pause the program so the user can read the output
+                Utilities.Utilities.Pause();
             }
+        }
+
+        // This method collects book details from the user and creates a Book object
+        static Book CreateBook()
+        {
+            Utilities.Utilities.ColorWrite("Enter Title: ", ConsoleColor.White);
+            string title = Console.ReadLine() ?? "";
+
+            Utilities.Utilities.ColorWrite("Enter Publisher: ", ConsoleColor.White);
+            string publisher = Console.ReadLine() ?? "";
+
+            // Read a valid year value from the user
+            int year = Utilities.Utilities.ReadInt("Enter Publication Year (YYYY): ", mustBePositive: true);
+
+            Utilities.Utilities.ColorWrite("Enter Author: ", ConsoleColor.White);
+            string author = Console.ReadLine() ?? "";
+
+            // Return a new Book object with user input
+            return new Book(title, publisher, year, author);
+        }
+
+        // This method collects magazine details and creates a Magazine object
+        static Magazine CreateMagazine()
+        {
+            Utilities.Utilities.ColorWrite("Enter Title: ", ConsoleColor.White);
+            string title = Console.ReadLine() ?? "";
+
+            Utilities.Utilities.ColorWrite("Enter Publisher: ", ConsoleColor.White);
+            string publisher = Console.ReadLine() ?? "";
+
+            // Read publication year and issue number
+            int year = Utilities.Utilities.ReadInt("Enter Publication Year (YYYY): ", mustBePositive: true);
+            int issue = Utilities.Utilities.ReadInt("Enter Issue Number: ", mustBePositive: true);
+
+            // Return a new Magazine object
+            return new Magazine(title, publisher, year, issue);
+        }
+
+        // This method collects newspaper details and creates a Newspaper object
+        static Newspaper CreateNewspaper()
+        {
+            Utilities.Utilities.ColorWrite("Enter Title: ", ConsoleColor.White);
+            string title = Console.ReadLine() ?? "";
+
+            Utilities.Utilities.ColorWrite("Enter Publisher: ", ConsoleColor.White);
+            string publisher = Console.ReadLine() ?? "";
+
+            // Read the publication year
+            int year = Utilities.Utilities.ReadInt("Enter Publication Year (YYYY): ", mustBePositive: true);
+
+            Utilities.Utilities.ColorWrite("Enter Editor: ", ConsoleColor.White);
+            string editor = Console.ReadLine() ?? "";
+
+            // Return a new Newspaper object
+            return new Newspaper(title, publisher, year, editor);
         }
     }
 }
